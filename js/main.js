@@ -13,7 +13,6 @@ function scrollProjectWheel(event){
     event.preventDefault();
     if(cooldown) return;
     
-    console.log("scrolled in "+delta);
     var items = document.querySelectorAll('.project-title');
     
     if(delta > 10){
@@ -41,9 +40,6 @@ function scrollProjectWheelMobile(event, elm){
     let currentY = event.touches[0].pageY;
     var delta = currentY - startingY;
 
-    console.log("hiiii "+ delta+"  ---  "+elm);
-
-    console.log("scrolled in "+delta);
     var items = document.querySelectorAll('.project-title');
     
     if(delta > 10){
@@ -66,7 +62,6 @@ function clearProjectWheelMobile(elm){
 
 function collapse(title_elm, element, parent)
 {
-    console.log("collapse "+element);
     let elm = document.querySelector('#'+element);
     let state = elm.classList.toggle("collapsed");
 
@@ -77,9 +72,7 @@ function collapse(title_elm, element, parent)
             title_elm.innerHTML = (state ? title_elm.dataset.show : title_elm.dataset.hide);
         }else{
             let arrow = title_elm.querySelector('polygon');
-            console.log(arrow);
             arrow.setAttribute("points", (state ? svg_down : svg_up));
-            console.log(arrow);
         }
     }
 
@@ -92,7 +85,6 @@ function collapse(title_elm, element, parent)
 
 function forceCollapse(element, desiredState)
 {
-    console.log("force collapse "+element);
     let elm = document.querySelector('#'+element);
 
     if(desiredState){
@@ -105,7 +97,7 @@ function forceCollapse(element, desiredState)
 function changeLanguage(elm)
 {
     let lang = elm.dataset.lang;
-    location.href = "../"+lang+"/index.html";
+    location.href = "../"+lang+"/";
 }
 
 function showProjects(show, elm){
@@ -146,7 +138,6 @@ function updateFilterButton(type)
 
     for(let i=0; i<buttons.length; i++)
     {
-        console.log("Searching "+type+" and current button is "+buttons[i].dataset.type);
         if(buttons[i].dataset.type != type){
             buttons[i].classList.remove("pressed");
         }
