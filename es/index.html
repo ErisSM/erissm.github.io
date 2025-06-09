@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="../main.css" type="text/css">
+    <link rel="shortcut icon" type="image/x-icon" href="../media/img/favicon.png">
+    <title>Eris | Mi Portfolio</title>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="eris-por.github.io" />
+    <meta property="og:title" content="Eris Serrano | Portfolio" />
+    <meta property="og:description" content="Portfolio de Eris Serrano Marín, programadora C++ especializada en la creación de experiencias en Realidad Virtual" />
+    <meta property="og:image" content="../media/img/profile.jpg" />
+</head>
+<body>
+<!-- TOP BAR -->
+<div id="top-bar">
+    <div class="language-button" onclick="collapse(null, 'language-icons');">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+            <path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-82q26-36 45-75t31-83H404q12 44 31 83t45 75Zm-104-16q-18-33-31.5-68.5T322-320H204q29 50 72.5 87t99.5 55Zm208 0q56-18 99.5-55t72.5-87H638q-9 38-22.5 73.5T584-178ZM170-400h136q-3-20-4.5-39.5T300-480q0-21 1.5-40.5T306-560H170q-5 20-7.5 39.5T160-480q0 21 2.5 40.5T170-400Zm216 0h188q3-20 4.5-39.5T580-480q0-21-1.5-40.5T574-560H386q-3 20-4.5 39.5T380-480q0 21 1.5 40.5T386-400Zm268 0h136q5-20 7.5-39.5T800-480q0-21-2.5-40.5T790-560H654q3 20 4.5 39.5T660-480q0 21-1.5 40.5T654-400Zm-16-240h118q-29-50-72.5-87T584-782q18 33 31.5 68.5T638-640Zm-234 0h152q-12-44-31-83t-45-75q-26 36-45 75t-31 83Zm-200 0h118q9-38 22.5-73.5T376-782q-56 18-99.5 55T204-640Z"/>
+        </svg>
+    </div>
+    <div id="language-icons" class="collapsed" onmouseleave="collapse(null, 'language-icons');">
+        <div class="lang" onclick="changeLanguage(this);" data-lang="en">
+            <svg viewBox="0 0 256 256">
+                <g transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                    <path d="M 88.35 57.052 c 0.034 -0.123 0.076 -0.243 0.109 -0.367 l -0.004 -0.002 C 89.457 52.957 90 49.043 90 45 c 0 -4.033 -0.54 -7.938 -1.538 -11.657 l 0.004 -0.002 c -0.039 -0.146 -0.088 -0.289 -0.128 -0.434 c -0.137 -0.492 -0.28 -0.982 -0.434 -1.468 c -0.081 -0.257 -0.167 -0.512 -0.253 -0.768 c -0.073 -0.217 -0.139 -0.437 -0.215 -0.653 h -0.015 c -1.645 -4.653 -4.021 -8.96 -7.01 -12.768 L 59.997 27.458 V 2.57 c -4.368 -1.544 -9.046 -2.427 -13.915 -2.542 h -2.164 c -4.868 0.115 -9.545 0.998 -13.913 2.541 v 24.889 L 9.589 17.249 c -2.989 3.809 -5.366 8.116 -7.01 12.769 H 2.564 c -0.076 0.216 -0.143 0.436 -0.216 0.653 c -0.086 0.255 -0.172 0.509 -0.253 0.765 c -0.154 0.486 -0.297 0.977 -0.434 1.47 c -0.04 0.145 -0.089 0.287 -0.128 0.432 l 0.004 0.002 C 0.54 37.061 0 40.966 0 45 c 0 4.043 0.543 7.957 1.545 11.684 l -0.004 0.002 c 0.033 0.123 0.074 0.242 0.108 0.365 c 0.146 0.524 0.298 1.046 0.462 1.562 c 0.075 0.236 0.154 0.47 0.233 0.705 c 0.077 0.231 0.148 0.464 0.229 0.693 H 2.59 c 1.647 4.651 4.025 8.955 7.016 12.761 l 20.4 -10.2 v 24.86 C 34.697 89.089 39.741 90 45 90 c 5.26 0 10.305 -0.911 14.997 -2.57 V 62.572 l 20.398 10.199 c 2.991 -3.806 5.368 -8.11 7.015 -12.76 h 0.015 c 0.081 -0.229 0.152 -0.463 0.23 -0.694 c 0.079 -0.234 0.158 -0.468 0.233 -0.704 C 88.052 58.096 88.205 57.575 88.35 57.052 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(243,244,245); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 53.999 0.902 c -2.565 -0.521 -5.213 -0.81 -7.917 -0.874 h -2.164 c -2.703 0.064 -5.35 0.354 -7.914 0.874 v 35.116 H 0.899 C 0.311 38.92 0 41.924 0 45 c 0 3.087 0.312 6.1 0.904 9.012 h 35.1 v 35.087 C 38.911 89.689 41.919 90 45 90 c 3.082 0 6.091 -0.311 8.999 -0.902 V 54.012 h 35.097 C 89.688 51.1 90 48.087 90 45 c 0 -3.076 -0.311 -6.08 -0.899 -8.983 H 53.999 V 0.902 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(204,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 85.242 65.135 c 0.829 -1.653 1.56 -3.363 2.184 -5.125 H 74.993 L 85.242 65.135 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(204,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 82.216 19.701 L 61.581 30.019 h 13.412 l 10.261 -5.131 C 84.353 23.088 83.341 21.354 82.216 19.701 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(204,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 4.747 24.887 c -0.829 1.655 -1.559 3.368 -2.182 5.132 H 15.01 L 4.747 24.887 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(204,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 7.8 70.321 L 28.422 60.01 H 15.01 L 4.758 65.136 C 5.661 66.936 6.674 68.67 7.8 70.321 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(204,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 9.605 72.771" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 80.412 17.251" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 80.395 72.77" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 9.589 17.25" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 9.589 17.249 l 20.416 10.208 v -3.99 V 2.584 C 21.874 5.458 14.813 10.593 9.589 17.249 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 59.997 2.585 v 22.302 v 2.57 L 80.411 17.25 C 75.188 10.594 68.128 5.459 59.997 2.585 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 30.006 72.77 V 62.572 l -20.4 10.2 c 5.222 6.646 12.276 11.774 20.4 14.646 V 72.77 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 59.997 62.572 v 9.296 v 15.548 c 8.123 -2.872 15.176 -8 20.398 -14.646 L 59.997 62.572 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,102); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+            </svg>
+            English
+        </div>
+        <div class="lang" onclick="changeLanguage(this);" data-lang="es">
+            <svg viewBox="0 0 256 256">
+                <g  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                    <path d="M 0 45 c 0 8.199 2.202 15.88 6.034 22.5 h 77.932 C 87.798 60.88 90 53.199 90 45 c 0 -8.199 -2.202 -15.88 -6.034 -22.5 H 6.034 C 2.202 29.12 0 36.801 0 45 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,196,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 83.966 22.5 c -0.269 -0.465 -0.546 -0.926 -0.831 -1.381 C 75.176 8.438 61.077 0 45 0 c -8.201 0 -15.881 2.205 -22.5 6.04 c -6.357 3.682 -11.736 8.867 -15.635 15.08 C 6.58 21.574 6.304 22.035 6.034 22.5 H 83.966 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(198,11,30); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                    <path d="M 6.034 67.5 c 0.269 0.465 0.546 0.926 0.831 1.38 c 3.899 6.213 9.278 11.397 15.635 15.08 C 29.119 87.795 36.799 90 45 90 c 16.077 0 30.176 -8.438 38.135 -21.12 c 0.285 -0.455 0.562 -0.915 0.831 -1.38 H 6.034 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(198,11,30); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+            </svg>
+            Español
+        </div>
+    </div>
+    <div class="language-button mobile-only collapsed" id="close-projects-mobile" onclick="showProjects(false);" style="left: unset; right: 25px;">
+        <svg viewBox="0 -960 960 960" width="24px" height="24px" >
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+    </div>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="main-box">
+    <div class="bio">
+        <div class="bio-image">
+            <img alt="Profile picture" src="../media/img/profile.jpg" />
+        </div>
+        <div class="bio-text">
+            <div class="content-title">Soy <b>Eris Serrano Marín</b>, una programadora de la <b>Región de Murcia, en España</b>.</div>
+            <div class="content-attr">Programadora C++ especializada en la creación de experiencias en Realidad Virtual</div>
+            <div class="content-desc">Soy una Ingeniera Multimedia con más de cuatro años de experiencia como programadora.<br/>Durante mi carrera profesional y mis estudios he trabajado con múltiples herramientas y lenguajes, especializándome sobre todo con <b>Unreal Engine</b> y <b>Unity</b>, y los lenguajes <b>C++</b> y <b>C#</b>.</div>
+            <div class="content-desc">Me apasionan especialmente el desarrollo de videojuegos y las realidades extendidas, aunque siempre trato de expandir mis horizontes y probar nuevas tecnologías y lenguajes para continuar creciendo como programadora.</div>
+            <div class="content-desc hidden">En esta página web muestro algunos de los proyectos en los que he participado con los años, tanto desarrollos profesionales con equipos multidisciplinares, como pequeños proyectos personales en solitario.</div>
+            <div class="content-contact">
+                <div class="content-icon" onclick="window.open('https://www.linkedin.com/in/eris-serrano-mar%C3%ADn-53606414b/');">
+                    <svg viewBox="0 0 32 32">
+                        <path d="M28.778 1.004h-25.56c-0.008-0-0.017-0-0.027-0-1.199 0-2.172 0.964-2.186 2.159v25.672c0.014 1.196 0.987 2.161 2.186 2.161 0.010 0 0.019-0 0.029-0h25.555c0.008 0 0.018 0 0.028 0 1.2 0 2.175-0.963 2.194-2.159l0-0.002v-25.67c-0.019-1.197-0.994-2.161-2.195-2.161-0.010 0-0.019 0-0.029 0h0.001zM9.9 26.562h-4.454v-14.311h4.454zM7.674 10.293c-1.425 0-2.579-1.155-2.579-2.579s1.155-2.579 2.579-2.579c1.424 0 2.579 1.154 2.579 2.578v0c0 0.001 0 0.002 0 0.004 0 1.423-1.154 2.577-2.577 2.577-0.001 0-0.002 0-0.003 0h0zM26.556 26.562h-4.441v-6.959c0-1.66-0.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441v-14.311h4.266v1.951h0.058c0.828-1.395 2.326-2.315 4.039-2.315 0.061 0 0.121 0.001 0.181 0.003l-0.009-0c4.5 0 5.332 2.962 5.332 6.817v7.855z"/>
+                    </svg>
+                    <div>LinkedIn</div>
+                </div>
+                <div class="content-icon"  onclick="window.open('mailto:eris.serrano97@gmail.com');">
+                    <svg viewBox="2 2 20 20">
+                        <path d="M22,5V9L12,13,2,9V5A1,1,0,0,1,3,4H21A1,1,0,0,1,22,5ZM2,11.154V19a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V11.154l-10,4Z"/>
+                    </svg>
+                    <div>eris.serrano97@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="expand-section" onclick="collapse(this, 'academic-history');">Formación académica <svg width="30" height="14" fill="white">
+        <polygon points="0,0 12,12 24,0"/>
+    </svg></h1>
+    <div id="academic-history" class="section collapsed">
+        <div id="content-utad" class="content-block">
+            <div class="content-logo" style="background-color: white;">
+                <img alt="U-Tad" src="../media/img/utad.png" />
+            </div>
+            
+            <div class="content-text">
+                <div class="content-title">Máster en Computación Gráfica, Realidad Virtual y Simulación</div>
+                <div class="content-year">2021-2022</div>
+                <div class="content-attr">U-tad</div>
+                <div class="content-desc mobile-only">
+                    <div class="show-more mobile-only" onclick="collapse(this,'extra-utad-mobile', 'content-utad')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div>
+                    <div id="extra-utad-mobile" class="content-extra collapsed"><br/>Especialización en la programación de motores gráficos y GPUs, simulaciones físicas con Houdini y desarrollo de aplicaciones AR/VR con Unity y Unreal Engine.<br/><br/><b>Nota media: 9.73</b>
+                    </div>
+                </div>
+                <div class="content-desc pc-only">Especialización en la programación de motores gráficos y GPUs, simulaciones físicas con Houdini y desarrollo de aplicaciones AR/VR con Unity y Unreal Engine.<br/><b>Nota media: 9.73</b></div>
+            </div>
+        </div>
+        <div id="content-uv" class="content-block">
+            <div class="content-logo" style="background-color: #002C52;">
+                <img alt="Universitat de València" src="../media/img/uv.png" />
+            </div>
+            
+            <div class="content-text">
+                <div class="content-title">Grado en Ingeniería Multimedia</div>
+                <div class="content-year">2015-2019</div>
+                <div class="content-attr">Universitat de València</div>
+                <div class="content-desc mobile-only">
+                    <div class="show-more mobile-only" onclick="collapse(this,'extra-uv-mobile', 'content-uv')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div>
+                    <div id="extra-uv-mobile" class="content-extra collapsed"><br/>Durante el grado se nos formó en múltiples lenguajes de programación y algoritmia, haciéndose un mayor enfoque en la programación gráfica y en tecnologías interactivas y multimodales.<br/><br/><b>Nota media: 8.93</b>
+                    </div>
+                </div>
+                <div class="content-desc pc-only">Durante el grado se nos formó en múltiples lenguajes de programación y algoritmia, haciéndose un mayor enfoque en la programación gráfica y en tecnologías interactivas y multimodales.<br/><b>Nota media: 8.93</b></div>
+            </div>
+        </div>
+        
+    </div>
+    <h1 class="expand-section" onclick="collapse(this, 'work-exp');">Experiencia laboral <svg width="30" height="14" fill="white">
+        <polygon points="0,0 12,12 24,0"/>
+    </svg></h1>
+    <div id="work-exp" class="section collapsed">
+        <div id="content-lafrontera" class="content-block">
+            <div class="content-logo" style="background-color: white;">
+                <img alt="Extendra" src="../media/img/extendravr.png" />
+            </div>
+            <div class="content-text">
+                <div class="content-title">La Frontera VR / Extendra</div>
+                <div class="content-year">Sep. 2022 - Feb. 2025</div>
+                <div class="content-attr">C++ · Unreal Engine · VR/AR</div>
+                <div class="content-desc mobile-only">
+                    <div class="show-more mobile-only" onclick="collapse(this,'extra-lafrontera-mobile', 'content-lafrontera')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div>
+                    <div id="extra-lafrontera-mobile" class="content-extra collapsed"><br/>Ocupé el puesto de Programadora C++, desarrollando aplicaciones de Realidad Virtual y Aumentada a medida para empresas con Unreal Engine, aprovechando la potencia del motor para crear experiencias inmersivas de gran realismo.<br/>
+                        <br/>En la empresa participé en el desarrollo de varios proyectos de perfil elevado. Mi responsabilidad en los mismos como programadora C++ era dar forma a las funcionalidades e interacciones deseadas por el cliente. En los desarrollos me familiaricé con tecnologías como el multijugador, chats de voz o seguimiento de manos.<br/>
+                        <br/>Los equipos eran multidisciplinares, trabajando conjuntamente con artistas 3D o programadores web para dar forma a los proyectos. En los desarrollos seguíamos la metodología ágil <b>Kanban</b>.<br/>
+                        <br/>También realizamos un esfuerzo para mantener una serie de plugins propios modulares, de manera que la tecnología desarrollada para un proyecto pudiera agilizar desarrollos futuros, siendo esencial mantener un código limpio y ordenado a la hora de programar.
+                    </div>
+                </div>
+                <div class="content-desc pc-only">Ocupé el puesto de Programadora C++, desarrollando aplicaciones de Realidad Virtual y Aumentada a medida para empresas con Unreal Engine, aprovechando la potencia del motor para crear experiencias inmersivas de gran realismo.
+                    <div class="show-more pc-only" onclick="collapse(this,'extra-lafrontera', 'content-lafrontera')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div></div> 
+                <div id="extra-lafrontera" class="content-extra collapsed"><br/>En la empresa participé en el desarrollo de varios proyectos de perfil elevado. Mi responsabilidad en los mismos como programadora C++ era dar forma a las funcionalidades e interacciones deseadas por el cliente. En los desarrollos me familiaricé con tecnologías como el multijugador, chats de voz o seguimiento de manos.<br/>
+                    <br/>Los equipos eran multidisciplinares, trabajando conjuntamente con artistas 3D o programadores web para dar forma a los proyectos. En los desarrollos seguíamos la metodología ágil <b>Kanban</b>.<br/>
+                    <br/>También realizamos un esfuerzo para mantener una serie de plugins propios modulares, de manera que la tecnología desarrollada para un proyecto pudiera agilizar desarrollos futuros, siendo esencial mantener un código limpio y ordenado a la hora de programar.
+                </div>
+                
+            
+            </div>
+        </div>
+        <div id="content-ntt" class="content-block">
+            <div class="content-logo" style="background-color: #5370AA;">
+                <img alt="NTT Data" src="../media/img/ntt.png" />
+            </div>
+            
+            <div class="content-text">
+                <div class="content-title">NTT Data</div>
+                <div class="content-year">Feb. 2020 - Sep. 2022</div>
+                <div class="content-attr">Python · Shell · SQL · Java</div>
+                <div class="content-desc mobile-only">
+                    <div class="show-more mobile-only" onclick="collapse(this,'extra-ntt-mobile', 'content-ntt')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div>
+                    <div id="extra-ntt-mobile" class="content-extra collapsed"><br/>Parte del equipo de desarrollo y mantenimiento para los procesos de facturación de una empresa puntera en el sector de las comunicaciones. Comencé en la compañía como Junior, ascendiendo posteriormente en Febrero de 2021 tras tomar mayores responsabilidades dentro del equipo.<br/>
+                        <br/>En el equipo gestionábamos 3 aplicaciones diferentes en el proceso de facturación, que se ocupaban de:
+                        <br/>
+                        <ul>
+                            <li>Generación de los ficheros XML y PDF de las facturas emitidas.</li>
+                            <li>Volcado de los datos de la factura en las BBDD.</li>
+                            <li>Un gestor documental para el archivado de los documentos.</li>
+                        </ul>
+                        Estas aplicaciones debían ser adaptadas a nuevos tipos de facturas o documentos que el cliente deseaba emitir.<br/> 
+                        <br/>                    
+                        Como parte del trabajo también se realizaban guardias fuera del horario laboral para corregir cualquier problema crítico que pudiese ocurrir durante los ciclos de facturación, los cuales tenían gran urgencia. Realizar estas guardias puso a prueba mis habilidades de resolución de problemas, ayudándome a desarrollarlas enormemente.</div>
+                </div>
+                <div class="content-desc pc-only">Parte del equipo de desarrollo y mantenimiento para los procesos de facturación de una empresa puntera en el sector de las comunicaciones. Comencé en la compañía como Junior, ascendiendo posteriormente en Febrero de 2021 tras tomar mayores responsabilidades dentro del equipo.
+                    <div class="show-more pc-only" onclick="collapse(this,'extra-ntt', 'content-ntt')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div></div> 
+                <div id="extra-ntt" class="content-extra collapsed"><br/>En el equipo gestionábamos 3 aplicaciones diferentes en el proceso de facturación, que se ocupaban de:
+                    <br/>
+                    <ul>
+                        <li>Generación de los ficheros XML y PDF de las facturas emitidas.</li>
+                        <li>Volcado de los datos de la factura en las BBDD.</li>
+                        <li>Un gestor documental para el archivado de los documentos.</li>
+                    </ul>
+                    Estas aplicaciones debían ser adaptadas a nuevos tipos de facturas o documentos que el cliente deseaba emitir.<br/> 
+                    <br/>                    
+                    Como parte del trabajo también se realizaban guardias fuera del horario laboral para corregir cualquier problema crítico que pudiese ocurrir durante los ciclos de facturación, los cuales tenían gran urgencia. Realizar estas guardias puso a prueba mis habilidades de resolución de problemas, ayudándome a desarrollarlas enormemente.</div>
+            </div>
+        </div>
+        <div id="content-lanube" class="content-block">
+            <div class="content-logo" style="background-color: white;">
+                <img alt="LaNube de Ideas" src="../media/img/lanube.png" />
+            </div>
+            <div class="content-text">
+                <div class="content-title">LaNube de Ideas</div>
+                <div class="content-year">Oct. 2018 - Dic. 2018</div>
+                <div class="content-attr">HTML · CSS · JS · SEO</div>
+                <div class="content-desc mobile-only">
+                    <div class="show-more mobile-only" onclick="collapse(this,'extra-lanube-mobile', 'content-lanube')" data-show="Mostrar más" data-hide="Mostrar menos">Mostrar más</div>
+                    <div id="extra-lanube-mobile" class="content-extra collapsed"><br/>Desempeñé el puesto de programadora web en prácticas en esta empresa de diseño web y branding, convirtiendo los diseños a código HTML y CSS compatible con Wordpress. También me encargué de la gestión en Wordpress de las webs de clientes y de su posicionamiento en los buscadores (SEO). 
+                    </div>
+                </div>
+                <div class="content-desc pc-only">Desempeñé el puesto de programadora web en prácticas en esta empresa de diseño web y branding, convirtiendo los diseños a código HTML y CSS compatible con Wordpress. También me encargué de la gestión en Wordpress de las webs de clientes y de su posicionamiento en los buscadores (SEO). </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <h1>Proyectos</h1>
+    <div class="projects-block" onwheel="scrollProjectWheel(event);" >
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Freelance">Freelance</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Personal">Personal</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Universidad">Universidad</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Empresa">Empresa</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Freelance">Freelance</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Personal">Personal</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Universidad">Universidad</div>
+        <div class="project-title" ontouchstart="startProjectWheelMobile(event, this);" ontouchmove="scrollProjectWheelMobile(event, this);" ontouchend="clearProjectWheelMobile(this);" onclick="showProjects(true, this);" data-type="Empresa">Empresa</div>
+    </div>
+
+    <footer>
+        Eris Serrano Marín, 2025.<br/>Ni esta web ni los proyectos expuestos en ella se ha desarrollado usando IAs.
+    </footer>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="disabled">
+    <div class="overlay-background" onclick="showProjects(false);"></div>
+    <div class="overlay-box">
+        <div class="close-btn pc-only" onclick="showProjects(false);">
+            <svg viewBox="0 -960 960 960" width="24px" height="24px" >
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </div>
+        <div class="main-box-overlay">
+            <div id="project-list" class="">
+                <div class="filter-list">
+                    <button onclick="showProjects(true, this);" data-type="Universidad">Universidad</button>
+                    <button onclick="showProjects(true, this);" data-type="Empresa">Empresa</button>
+                    <button onclick="showProjects(true, this);" data-type="Freelance">Freelance</button>
+                    <button onclick="showProjects(true, this);" data-type="Personal">Personal</button>
+                </div>
+                <div class="content-overlay">
+                <h1>Proyectos</h1>
+                    <div id="bintxe" data-type="Freelance" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="Bintxe: Digital portfolio" src="../media/img/bintxe.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Bintxe | Portfolio digital</div>
+                            <div class="content-year">2025</div>
+                            <div class="content-attr">Página web</div>
+                            <div class="content-desc pc-only">Una galería de imágenes y lector de cómics para un artista digital.</div>
+                            
+                        </div>
+                    </div>
+                    <div id="extendra-hub" data-type="Empresa" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="Extendra Hub" src="../media/img/extendrahub.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Extendra Hub</div>
+                            <div class="content-year">2024</div>
+                            <div class="content-attr">Unreal Engine 5.1</div>
+                            <div class="content-desc pc-only">Una aplicación de Realidad Virtual multijugador enfocada al coworking y la realización de eventos, con múltiples salas y entornos ajustados a las posibles necesidades de los usuarios.</div>
+                            
+                        </div>
+                    </div>
+                    <div id="jet-showroom" data-type="Empresa" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="Private Jet Showroom" src="../media/img/plane-tumb.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">App de tours virtuales en aviones privados</div>
+                            <div class="content-year">2023</div>
+                            <div class="content-attr">Unreal Engine 5.1</div>
+                            <div class="content-desc pc-only">Una aplicación multijugador de VR para realizar visitas guiadas por los aviones de la compañía. La aplicación contaba con 5 aviones que podían ser visitados tanto por fuera como por dentro y que contaban con múltiples elementos interactivos.</div>
+                            
+                        </div>
+                    </div>
+                    <div id="frontera-plugins" data-type="Empresa" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="La Frontera Plugins" src="../media/img/lfvr-plugins.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">La Frontera Plugins</div>
+                            <div class="content-year">2022-2024</div>
+                            <div class="content-attr">Unreal Engine</div>
+                            <div class="content-desc pc-only">Una serie de plugins modulares desarrollados internamente en La Frontera/Extendra con funcionalidades que podían ser reutilizadas en múltiples proyectos.</div>
+                        </div>
+                    </div>
+                    <div id="frontera-expo" data-type="Empresa" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="La Frontera EXPO" src="../media/img/expo.jpg" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">La Frontera EXPO</div>
+                            <div class="content-year">2022</div>
+                            <div class="content-attr">Unreal Engine 4.27</div>
+                            <div class="content-desc pc-only">Una aplicación VR multijugador con múltiples entornos e interacciones, usada para realizar demostraciones en ferias o a clientes como muestra de nuestro trabajo en La Frontera.</div>
+                        </div>
+                    </div>
+                    <div id="tfm-retro-vr" data-type="Universidad" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="TFM: Adapting retro games to VR" src="../media/img/tfm-retro-1.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">TFM: Adaptación de videojuegos retro a VR</div>
+                            <div class="content-year">2022</div>
+                            <div class="content-attr">Unity 2021</div>
+                            <div class="content-desc pc-only">Adaptación a realidad virtual de dos videojuegos clásicos de arcade: Pong y Snake. Desarrollado como Trabajo Final de Máster en el que se trataban de identificar y resolver los problemas derivados de llevar a la VR juegos que no fueron concebidos para ella.</div>
+                        </div>
+                    </div>
+                    <div id="escape-room-vr" data-type="Universidad" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="Escape Room VR" src="../media/img/escape-room.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">'Escape Room' en Realidad Virtual</div>
+                            <div class="content-year">2022</div>
+                            <div class="content-attr">Unity 2020</div>
+                            <div class="content-desc pc-only">Un juego de puzles en realidad virtual en el que debían superarse una serie de desafíos, al estilo de una 'escape room', realizado como proyecto final de una asginatura del máster.</div>
+                        </div>
+                    </div>
+                    <div id="api3d" data-type="Universidad" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="OpenGL-based graphics engine" src="../media/img/api3d-3.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Creación de un motor gráfico en C++ usando OpenGL</div>
+                            <div class="content-year">2022</div>
+                            <div class="content-attr">C++</div>
+                            <div class="content-desc pc-only">Proyecto realizado a lo largo de una asignatura completa del máster, en el que se desarrolló un motor gráfico que permitiese crear y visualizar escenas 3D usando OpenGL 4.  </div>
+                        </div>
+                    </div>
+                    <div id="chill-room-vr" data-type="Universidad" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="Chill Room VR" src="../media/img/chillroom-vr-1.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Espacio inmersivo relajante en VR</div>
+                            <div class="content-year">2021</div>
+                            <div class="content-attr">Unity 2020</div>
+                            <div class="content-desc pc-only">Un proyecto realizado como trabajo final de una asginatura del máster, consistente en crear una aplicación de realidad virtual inmersiva con temática relajante.</div>
+                        </div>
+                    </div>
+                    <div id="personal-blog" data-type="Personal" class="content-block" tabindex="0" onclick="window.open('https://eris.wtf/about');">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="My Personal Blog" src="../media/img/blog.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Blog Personal</div>
+                            <div class="content-year">2024</div>
+                            <div class="content-attr">Página web</div>
+                            <div class="content-desc pc-only">Una web que comenzó como una broma acerca de lo sobrecargada que se encontraba la UI de Twitter y que acabé convirtiendo en un (nada serio) blog personal, sirviendo a su vez como un ejercicio para actualizar mis habilidades de programación web.</div>
+                        </div>
+                    </div>
+                    <div id="jam-paella" data-type="Personal" class="content-block" tabindex="0" onclick="projectSelected(this)">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="Paella Loca VR" src="../media/img/jam-paella.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Paella loca (Juego VR para Game Jam)</div>
+                            <div class="content-year">2022</div>
+                            <div class="content-attr">Unity 2021</div>
+                            <div class="content-desc pc-only">Un videojuego de realidad virtual desarrollado junto con otros cuatro excompañeros del máster para una game jam organizada por U-Tad con temática de "gastronomía española".</div>
+                        </div>
+                    </div>
+                    <div id="old-portfolio" data-type="Personal" class="content-block" tabindex="0" onclick="window.open('https://mural.uv.es/isema/mis_trabajos.html');">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="My Old Portfolio" src="../media/img/old-portfolio.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Portfolio antiguo</div>
+                            <div class="content-year">2019</div>
+                            <div class="content-attr">Página web</div>
+                            <div class="content-desc pc-only">Mi antiguo portfolio, una web con una colección de proyectos que hice en la universidad. No se encuentra actualizado y no es representativo de mis habilidades actuales, pero contiene proyectos no presentes en esta web que aún considero interesantes. </div>
+                        </div>
+                    </div>
+                    <div id="old-portfolio" data-type="Universidad" class="content-block" tabindex="0" onclick="window.open('https://mural.uv.es/isema/mis_trabajos.html');">
+                        <div class="content-logo" style="background-color: white;">
+                            <img alt="My Old Portfolio" src="../media/img/old-portfolio.png" />
+                        </div>
+                        <div class="content-text">
+                            <div class="content-title">Portfolio antiguo</div>
+                            <div class="content-year">2019</div>
+                            <div class="content-attr">Página web</div>
+                            <div class="content-desc pc-only">Mi antiguo portfolio, una web con una colección de proyectos que hice en la universidad. No se encuentra actualizado y no es representativo de mis habilidades actuales, pero contiene proyectos no presentes en esta web que aún considero interesantes.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="project-body">
+                <div class="filter-list pc-only">
+                    <button onclick="showProjects(true, this);" >Volver</button>
+                </div>
+                <div class="content-overlay">
+                    <article id="project-content">
+                    </article>
+                    <div style="text-align: center;">
+                        <button class="mobile-only" onclick="showProjects(true, this);" >Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
